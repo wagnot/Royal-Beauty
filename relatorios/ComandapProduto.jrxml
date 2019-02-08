@@ -1,0 +1,142 @@
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioComandapProduto" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nomeProduto" class="java.lang.String"/>
+	<field name="valorProduto" class="java.lang.String"/>
+	<field name="dataComandaProduto" class="java.lang.String"/>
+	<field name="valorTotalComandaProduto" class="java.lang.String"/>
+	<field name="dataCompleta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="7" width="555" height="112" backcolor="#FFFFFF"/>
+				<image>
+					<reportElement x="0" y="0" width="154" height="97">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA["C:/Royal/relatorios/salao.png"]]></imageExpression>
+				</image>
+				<image>
+					<reportElement x="410" y="10" width="145" height="52">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA["C:/Royal/relatorios/sistema.png"]]></imageExpression>
+				</image>
+				<frame>
+					<reportElement mode="Opaque" x="0" y="113" width="555" height="27" forecolor="#000000" backcolor="#C155C0"/>
+					<textField>
+						<reportElement x="280" y="2" width="262" height="30" forecolor="#FFFFFF"/>
+						<textElement textAlignment="Right">
+							<font size="14"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{dataCompleta}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<staticText>
+					<reportElement x="280" y="70" width="275" height="40"/>
+					<textElement textAlignment="Right">
+						<font size="22"/>
+					</textElement>
+					<text><![CDATA[Comanda por Produto]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="4" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="32" width="120" height="27"/>
+				<textElement>
+					<font fontName="Century Gothic" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="33" width="120" height="26"/>
+				<textElement>
+					<font fontName="Century Gothic" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="32" width="150" height="27"/>
+				<textElement>
+					<font fontName="Century Gothic" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataComandaProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="32" width="165" height="27"/>
+				<textElement>
+					<font fontName="Century Gothic" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorTotalComandaProduto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="-2" width="145" height="30"/>
+				<textElement>
+					<font fontName="Century Gothic" size="15"/>
+				</textElement>
+				<text><![CDATA[Valor total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="30"/>
+				<textElement>
+					<font fontName="Century Gothic" size="15"/>
+				</textElement>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="-1" width="110" height="28"/>
+				<textElement>
+					<font fontName="Century Gothic" size="15"/>
+				</textElement>
+				<text><![CDATA[Valor ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="-2" width="150" height="30"/>
+				<textElement>
+					<font fontName="Century Gothic" size="15"/>
+				</textElement>
+				<text><![CDATA[Data da Comanda Produto:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="49" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="13" width="555" height="27" forecolor="#000000" backcolor="#C155C0"/>
+				<textField>
+					<reportElement x="0" y="0" width="240" height="30" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Left">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dataCompleta}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="500" y="5" width="50" height="22" forecolor="#FFFFFF"/>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>

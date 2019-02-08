@@ -1,0 +1,155 @@
+﻿
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioClienteEspecifico" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2==1]]></conditionExpression>
+			<style backcolor="#EDEBEB"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dataCompleta" class="java.lang.String"/>
+	<field name="nomeCliente" class="java.lang.String"/>
+	<field name="valorServico" class="java.lang.String"/>
+	<field name="dataComanda" class="java.lang.String"/>
+	<field name="observacao" class="java.lang.String"/>
+	<field name="servicos" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="148" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="7" width="555" height="100" backcolor="#FFFFFF"/>
+				<image>
+					<reportElement x="0" y="0" width="154" height="97">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA["C:/Royal/relatorios/salao.png"]]></imageExpression>
+				</image>
+				<image>
+					<reportElement x="410" y="10" width="145" height="52">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<imageExpression><![CDATA["C:/Royal/relatorios/sistema.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="180" y="70" width="373" height="29" forecolor="#000000" backcolor="#000000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relatório Comanda por Cliente]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="110" width="555" height="29" forecolor="#C155C0" backcolor="#C155C0"/>
+				<textField>
+					<reportElement x="300" y="-1" width="255" height="30" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dataCompleta}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="1" y="4" width="58" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[Cliente:]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="Style1" mode="Transparent" x="52" y="8" width="238" height="16" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nomeCliente}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="118" height="30" forecolor="#000000"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Total Gasto (R$)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="0" width="71" height="30" forecolor="#000000">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="214" height="30"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Observação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="0" width="150" height="30"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Serviços]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="52">
+			<textField>
+				<reportElement style="Style1" mode="Opaque" x="0" y="0" width="118" height="42"/>
+				<textFieldExpression><![CDATA[$F{valorServico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" mode="Opaque" x="118" y="0" width="70" height="42"/>
+				<textFieldExpression><![CDATA[$F{dataComanda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" mode="Opaque" x="340" y="0" width="214" height="42"/>
+				<textFieldExpression><![CDATA[$F{observacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Style1" mode="Opaque" x="188" y="0" width="152" height="42"/>
+				<textFieldExpression><![CDATA[$F{servicos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="57" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="21" width="555" height="29" backcolor="#C155C0"/>
+				<textField>
+					<reportElement x="2" y="-1" width="477" height="30" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{dataCompleta}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="500" y="5" width="50" height="22" forecolor="#FFFFFF"/>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
